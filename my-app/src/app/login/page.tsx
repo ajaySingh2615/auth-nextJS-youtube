@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
+import { ThemeToggle } from "@/helpers/ThemeToggle";
 
 export default function LoginPage() {
   const [user, setUser] = React.useState({
@@ -11,18 +12,21 @@ export default function LoginPage() {
 
   const onLogin = async () => {};
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4 py-10">
+    <div className="min-h-screen w-full bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-950 dark:to-gray-900 flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-md">
-        <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-8">
-          <div className="mb-6">
-            <h1 className="text-2xl font-semibold tracking-tight text-gray-900">
-              Welcome back
+        <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-8 dark:bg-gray-900 dark:border-gray-800">
+          <div className="flex items-center justify-between mb-6">
+            <h1 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
+              Sign in
             </h1>
-            <p className="mt-1 text-sm text-gray-600">
+            <ThemeToggle />
+          </div>
+          <div className="mb-6">
+            <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
               Don't have an account? {""}
               <Link
                 href="/signup"
-                className="font-medium text-blue-600 hover:text-blue-500"
+                className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
               >
                 Sign up
               </Link>
@@ -33,7 +37,7 @@ export default function LoginPage() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
               >
                 Email
               </label>
@@ -44,14 +48,14 @@ export default function LoginPage() {
                 onChange={(e) => setUser({ ...user, email: e.target.value })}
                 placeholder="you@example.com"
                 autoComplete="email"
-                className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder:text-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100 transition"
+                className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder:text-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100 transition dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:placeholder:text-gray-500"
               />
             </div>
 
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
               >
                 Password
               </label>
@@ -62,7 +66,7 @@ export default function LoginPage() {
                 onChange={(e) => setUser({ ...user, password: e.target.value })}
                 placeholder="••••••••"
                 autoComplete="current-password"
-                className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder:text-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100 transition"
+                className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder:text-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100 transition dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:placeholder:text-gray-500"
               />
             </div>
 
